@@ -1,0 +1,35 @@
+{
+  "name": "bp-smart-commit",
+  "version": "1.3.0",
+  "description": "A githook script that transforms commit messages to JIRA smart commits based on branch names",
+  "author": "Pierre Cavin <tech@sherlox.io>",
+  "contributors": [
+    "Jesse Dobbelaere <jesse@dobbelae.re>"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bricoprive/bp-smart-commit.git"
+  },
+  "homepage": "https://github.com/bricoprive/bp-smart-commit#readme",
+  "bugs": {
+    "url": "https://github.com/bricoprive/bp-smart-commit/issues"
+  },
+  "keywords": [
+    "git",
+    "jira",
+    "smart commit",
+    "conventional commit",
+    "husky",
+    "git hook"
+  ],
+  "bin": {
+    "bp-smart-commit": "./index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
