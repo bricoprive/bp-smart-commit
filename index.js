@@ -65,6 +65,12 @@ const getBranchInfos = (branchName) => {
   const matchedWithContext = branchName.match(tagMatcherWithContext)
   const matchedWithoutContext = branchName.match(tagMatcherWithoutContext)
   
+  if (!['master', 'dev', 'develop'].includes(branchName) && !matchedWithContext && !matchedWithoutContext) {
+    console.error(`The branch name "${branchName}" is invalid ! Please rename it using: git branch -m {type}/{optional-context}/short-description`)
+    console.error(`Valid types are: ${validCommitTypes.join(', ')}.`)
+    console.error(`See https://www.conventionalcommits.org/en/v1.0.0/ for more informations.`)
+    process.exit(1)
+  }
   
   let branchInfos
   
