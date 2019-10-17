@@ -60,11 +60,11 @@ const validCommitTypes = [
 * @returns {object}
 */
 const getBranchInfos = (branchName) => {
-  const tagMatcherWithContext = new RegExp(`^[^/]+/[A-Z]+-[0-9]+/[a-z-]+`, "i")
-  const tagMatcherWithoutContext = new RegExp(`^[^/]+/[a-z-]+`, "i")
-  const matchedWithContext = branchName.match(tagMatcherWithContext)
-  const matchedWithoutContext = branchName.match(tagMatcherWithoutContext)
-  
+  const matcherWithContext = new RegExp(`^[a-z]+/[A-Za-z-]+/[a-z-]+`, "i")
+  const matcherWithoutContext = new RegExp(`^[a-z]+/[a-z-]+`, "i")
+  const matchedWithContext = branchName.match(matcherWithContext)
+  const matchedWithoutContext = branchName.match(matcherWithoutContext)
+
   if (!['master', 'dev', 'develop'].includes(branchName) && !matchedWithContext && !matchedWithoutContext) {
     console.error(`The branch name "${branchName}" is invalid ! Please rename it using: git branch -m {type}/{optional-context}/short-description`)
     console.error(`Valid types are: ${validCommitTypes.join(', ')}.`)
